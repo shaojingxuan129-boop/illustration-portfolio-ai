@@ -111,23 +111,23 @@
   <button style="margin:5px; padding:8px 16px; border:none; border-radius:20px; background:#eee;">Character Design</button>
 </div> 
     <div class="grid">
-      <div class="card">
+      <div class="card" data-category="illustration">
   <img src="https://picsum.photos/400/300?random=1" style="width:100%; border-radius:12px;">
   <p>Book Illustration</p>
 </div>
 
-<div class="card">
-  <img src="https://picsum.photos/400/300?random=2" style="width:100%; border-radius:12px;">
+<div class="card" data-category="character">
+  <img src="https://picsum.photos/400/300?random=2">
   <p>OC Original Character</p>
 </div>
 
-<div class="card">
-  <img src="https://picsum.photos/400/300?random=3" style="width:100%; border-radius:12px;">
+<div class="card" data-category="game">
+  <img src="https://picsum.photos/400/300?random=3">
   <p>Game Character Design</p>
 </div>
 
-<div class="card">
-  <img src="https://picsum.photos/400/300?random=4" style="width:100%; border-radius:12px;">
+<div class="card" data-category="architecture">
+  <img src="https://picsum.photos/400/300?random=4">
   <p>Architecture Concept</p>
 </div>
     </div>
@@ -136,6 +136,31 @@
   <footer>
     © 2026 Illustration Portfolio AI. Built with confidence.
   </footer>
+<script>
+  const buttons = document.querySelectorAll("button");
+  const cards = document.querySelectorAll(".card");
 
+  buttons.forEach(button => {
+    button.addEventListener("click", () => {
+      const text = button.innerText.toLowerCase();
+
+      cards.forEach(card => {
+        const category = card.dataset.category;
+
+        if (text === "all") {
+          card.style.display = "block";
+        } else if (text.includes("illustration") && category === "illustration") {
+          card.style.display = "block";
+        } else if (text.includes("game") && category === "game") {
+          card.style.display = "block";
+        } else if (text.includes("character") && category === "character") {
+          card.style.display = "block";
+        } else {
+          card.style.display = "none";
+        }
+      });
+    });
+  });
+</script>
 </body>
 </html>
