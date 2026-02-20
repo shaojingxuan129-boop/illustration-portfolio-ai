@@ -58,15 +58,27 @@
     }
 
     .card {
-      background: #eee;
-      height: 200px;
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #888;
-      font-size: 14px;
-    }
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  transition: 0.3s ease;
+  text-align: left;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+}
+
+.card img {
+  width: 100%;
+  display: block;
+}
+
+.card p {
+  padding: 16px;
+  font-weight: 500;
+}
 
     footer {
       padding: 40px 20px;
